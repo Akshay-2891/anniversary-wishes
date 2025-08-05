@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy 5th Anniversary ❤</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    body {
+      background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .fade-in {
+      animation: fadeIn 2s ease-in forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .heart-beat {
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Slideshow styles */
+    .slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center px-4">
+
+  <div class="max-w-3xl text-center py-16 fade-in">
+    <h1 class="text-4xl sm:text-5xl font-bold text-pink-700 animate__animated animate__bounceInDown mb-4">
+      🎉 Happy 5th Anniversary! 🎉
+    </h1>
+    
+    <p class="text-lg sm:text-xl text-gray-800 animate__animated animate__fadeInUp">
+      Celebrating <span class="font-semibold text-red-600">5 beautiful years</span> of love, laughter, and memories.<br>
+      Wishing you both Happy Wedding Anniversary 💕💍🌹
+    </p>
+
+    <!-- Slideshow section -->
+    <div class="slideshow mt-10 animate__animated animate__zoomIn">
+      <img src="ATHAMAMA.jpg" alt="Couple 1" class="slide active" style="object-fit: cover;">
+      <img src="121.jpg" alt="Couple 2" class="slide" style="object-fit: contain;">
+      <img src="131.jpg" alt="Couple 3" class="slide" style="object-fit: contain;">
+      <img src="141.jpg" alt="Couple 4" class="slide" style="object-fit: contain;">
+    </div>
+
+    <!-- Message -->
+    <div class="mt-12 animate__animated animate__fadeInUpBig">
+      <h2 class="text-2xl sm:text-3xl text-pink-800 font-semibold mb-4">💗  Love You Aththa & Mamuu 💗</h2>
+      <p class="text-md text-gray-700">Forever cherished, forever celebrated... 💫💑🌸</p>
+    </div>
+
+    <!-- Button -->
+    <div class="mt-8">
+      <button class="bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700 transition-all heart-beat shadow-lg">
+        💞 Forever Together 💞
+      </button>
+    </div>
+
+    <!-- Stickers -->
+    <div class="mt-8 flex justify-center gap-6 text-4xl animate__animated animate__fadeInUp animate__delay-1s">
+      🌷💘💏🌟💖🎈
+    </div>
+  </div>
+
+  
+  <audio autoplay loop>
+    <source src="se_orita_instrumental.mp3" type="audio/mpeg">
+  </audio>
+  
+
+  <!-- JS for slideshow -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 3000); // Change image every 3 seconds
+  </script>
+</body>
+</html>
